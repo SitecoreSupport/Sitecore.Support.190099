@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
-using Sitecore.Analytics.Aggregation.Pipeline;
-using Sitecore.Analytics.Model;
-using Sitecore.Diagnostics;
-using Sitecore.WFFM.Abstractions.Analytics;
-using Sitecore.WFFM.Analytics.Aggregation.Processors.FormSummary;
-
-namespace Sitecore.Support.WFFM.Analytics.Aggregation.Processors.FormSummary
+﻿namespace Sitecore.Support.WFFM.Analytics.Aggregation.Processors.FormSummary
 {
+  using System;
+  using System.Collections.Generic;
+  using System.IO;
+  using System.Linq;
+  using System.Xml.Serialization;
+  using Sitecore.Analytics.Aggregation.Pipeline;
+  using Sitecore.Analytics.Model;
+  using Sitecore.Diagnostics;
+  using Sitecore.WFFM.Abstractions.Analytics;
+  using Sitecore.WFFM.Analytics.Aggregation.Processors.FormSummary;
   /// <summary>
   /// Defines form summary processor class.
   /// </summary>
@@ -36,7 +35,7 @@ namespace Sitecore.Support.WFFM.Analytics.Aggregation.Processors.FormSummary
 
       foreach (var pageEvent in pageEvents)
       {
-        var formSummaryItem = args.Context.Results.GetFact<Sitecore.WFFM.Analytics.Aggregation.Processors.FormSummary.FormSummary>();
+        var formSummaryItem = args.Context.Results.GetFact<FormSummary>();
 
         var formSummaryKey = new FormSummaryKey()
         {
@@ -72,7 +71,7 @@ namespace Sitecore.Support.WFFM.Analytics.Aggregation.Processors.FormSummary
 
           foreach (string fieldValue in fieldValues)
           {
-            var formFieldValue = args.Context.Results.GetDimension<Sitecore.WFFM.Analytics.Aggregation.Processors.FormFieldValues.FormFieldValues>();
+            var formFieldValue = args.Context.Results.GetDimension<FormFieldValues.FormFieldValues>();
             formFieldValue.Add(formSummaryKey.Id, field.FieldId, field.FieldName, fieldValue);
           }
         }

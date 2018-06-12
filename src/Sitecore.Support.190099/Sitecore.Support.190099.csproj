@@ -78,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WFFM\Analytics\Aggregation\Processors\FormFieldValues\FormFieldValues.cs" />
+    <Compile Include="WFFM\Analytics\Aggregation\Processors\FormFieldValues\FormFieldValuesKey.cs" />
+    <Compile Include="WFFM\Analytics\Aggregation\Processors\FormFieldValues\FormFieldValuesValue.cs" />
     <Compile Include="WFFM\Analytics\Aggregation\Processors\FormSummary\FormSummaryProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\sc900.local.pubxml" />
     <None Include="web.config" />
   </ItemGroup>
   <PropertyGroup>
