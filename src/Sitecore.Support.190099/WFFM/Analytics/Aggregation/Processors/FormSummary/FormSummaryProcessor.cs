@@ -68,10 +68,9 @@
         {
           IEnumerable<string> fieldValues = field.Values != null && field.Values.Count > 0 ? field.Values :
               (!string.IsNullOrEmpty(field.Value) ? Enumerable.Repeat(field.Value, 1) : Enumerable.Repeat(string.Empty, 1));
-
+          var formFieldValue = args.Context.Results.GetDimension<FormFieldValues.FormFieldValues>();
           foreach (string fieldValue in fieldValues)
           {
-            var formFieldValue = args.Context.Results.GetDimension<FormFieldValues.FormFieldValues>();
             formFieldValue.Add(formSummaryKey.Id, field.FieldId, field.FieldName, fieldValue);
           }
         }

@@ -21,7 +21,7 @@ namespace Sitecore.Support.WFFM.Analytics.Aggregation.Processors.FormFieldValues
         return;
       }
 
-      Add(new FormFieldValuesKey(submitId), new FormFieldValuesValue(fieldId, fieldName, fieldValue));
+      Add(new FormFieldValuesKey(submitId, fieldId, fieldName, fieldValue), new FormFieldValuesValue());
     }
   }
 }
